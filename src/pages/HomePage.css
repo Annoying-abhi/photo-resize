@@ -1,0 +1,100 @@
+.home-page {
+  /* text-align: center; */ /* Remove center alignment for layout */
+}
+
+.image-processing-area {
+  display: flex;
+  flex-direction: column; /* Stack vertically on small screens */
+  gap: 30px; /* Space between sections */
+}
+
+/* Container for the cropper and remove button */
+.cropper-container {
+  text-align: center;
+  padding: 0; /* Let ImageCropper handle padding */
+  border: none; /* Remove border if ImageCropper has its own */
+  background-color: transparent; /* Let ImageCropper handle background */
+  display: flex; /* Allow button to align nicely */
+  flex-direction: column;
+  align-items: center;
+}
+
+.cropper-container h2 {
+  margin-bottom: 10px;
+  text-align: left;
+  width: 100%; /* Make h2 take full width */
+  font-size: 1.2rem;
+  color: #333;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+}
+
+.remove-button {
+  background-color: #dc3545; /* Red color for removal */
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 15px; /* Add space above button */
+  max-width: 250px; /* Prevent button from becoming too wide */
+  align-self: center; /* Center button below cropper */
+}
+
+.remove-button:hover {
+  background-color: #c82333;
+}
+
+/* Areas for Settings and Preview */
+.settings-area,
+.preview-area {
+  padding: 0; /* SettingsPanel and ImagePreview will handle their own padding */
+  border: none; /* Remove border if children handle it */
+  border-radius: 8px;
+  background-color: transparent; /* Let children handle background */
+  min-height: 200px; /* Ensure areas have some height */
+}
+
+/* Placeholder styles for Preview Area content (REMOVE LATER) */
+.preview-area h2 {
+   margin-top: 0;
+   margin-bottom: 15px;
+   font-size: 1.2rem;
+   color: #333;
+   border-bottom: 1px solid #eee;
+   padding-bottom: 8px;
+   padding-left: 20px; /* Add padding to match SettingsPanel */
+}
+.preview-area pre {
+  margin: 0 20px 20px 20px; /* Add padding to match SettingsPanel */
+  background-color: #f8f9fa;
+  border: 1px dashed #ccc;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+
+/* Layout for wider screens */
+@media (min-width: 768px) {
+  .image-processing-area {
+    flex-direction: row; /* Side-by-side on larger screens */
+    align-items: flex-start; /* Align items to the top */
+  }
+
+  .cropper-container {
+     flex: 1 1 300px; /* Give it a base width but allow shrinking/growing */
+     max-width: 400px; /* Optional: Max width for cropper */
+     align-items: center; /* Center button below cropper */
+     /* Remove border/padding if ImageCropper component handles it */
+  }
+
+  .settings-area {
+    flex: 1 1 300px; /* Adjust flex basis */
+    max-width: 350px; /* Limit settings panel width */
+  }
+
+  .preview-area {
+     flex: 1.5 1 400px; /* Preview might need more space, give it a larger base */
+  }
+}

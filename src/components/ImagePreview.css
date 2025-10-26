@@ -1,0 +1,150 @@
+.image-preview-wrapper {
+  width: 100%;
+  margin-top: 0;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #fdfdfd;
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column;
+}
+
+.image-preview-wrapper h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  color: #333;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+}
+
+.image-preview-wrapper p {
+  color: #555;
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+}
+
+.preview-box {
+  width: 100%;
+  margin-bottom: 20px;
+  background-color: #f8f9fa;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  flex-grow: 1; /* Allow box to grow to fill space */
+  display: flex; /* Center canvas within the box */
+  justify-content: center;
+  align-items: center;
+}
+
+.preview-box.hidden {
+  display: none;
+}
+
+.preview-box canvas {
+  display: block;
+  max-width: 100%; /* Ensure canvas doesn't overflow */
+  max-height: 100%; /* Ensure canvas doesn't overflow */
+  height: auto; /* Maintain aspect ratio based on width */
+  border: 1px dashed #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  border: 1px dashed #ccc;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  color: #555;
+  padding: 20px;
+  width: 100%; /* Make loading take full width */
+  flex-grow: 1; /* Allow loading box to grow */
+}
+
+.loading-container p {
+   margin-top: 15px;
+   font-weight: 500;
+}
+
+.spinner {
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #007bff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: auto; /* Push buttons to the bottom if container grows */
+}
+
+.btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+}
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.btn-secondary {
+   background-color: #6c757d;
+   color: #fff;
+}
+.btn-secondary:hover {
+   background-color: #5a6268;
+}
+
+.btn-download {
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 12px 20px;
+}
+
+.error-message {
+  color: #dc3545;
+  font-weight: bold;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+
+@media (min-width: 576px) {
+  .button-group {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .btn-download {
+     flex: 2 1 0%;
+  }
+  .btn-secondary {
+     flex: 1 1 0%;
+  }
+}

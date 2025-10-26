@@ -1,24 +1,25 @@
-import logo from './logo.svg';
+import React from 'react';
+import Layout from './components/Layout';
+import HomePage from './pages/HomePage';
+// We might add routing later if we add the About page back
+// import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+// import AboutPage from './pages/AboutPage';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout>
+      <HomePage />
+      {/* Basic structure without routing for now */}
+      {/* <Router>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutPage />} />
+          </Routes>
+        </Layout>
+      </Router> */}
+    </Layout>
   );
 }
 
